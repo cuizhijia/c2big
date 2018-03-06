@@ -33,9 +33,9 @@ public class App
         
 	    try (InputStreamReader read = new InputStreamReader(System.in)) {
 	    	int read2 = read.read();
+	    	System.out.println(read2);
 		} catch (Exception e) {
 			// TODO: handle exception
-		
 		}
         
     }
@@ -54,6 +54,7 @@ public class App
     	System.out.println(map);
     	return map;
     }
+    
     
     
     
