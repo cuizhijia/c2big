@@ -40,7 +40,6 @@ public class EventOperation extends AbstractEventOperatio{
 			
 			@Override
 			public void run() {
-				// TODO Auto-generated method stub
 				
 			}
 		}).start();
