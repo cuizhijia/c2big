@@ -40,7 +40,7 @@ public class EventOperation extends AbstractEventOperatio{
 			
 			@Override
 			public void run() {
-				
+				System.out.println(" I run");
 			}
 		}).start();
 		
