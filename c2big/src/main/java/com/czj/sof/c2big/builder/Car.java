@@ -11,7 +11,7 @@ public class Car {
 	
 	public final Door door;
 
-	private Car(Builder builder) {
+	private Car(BuilderCar builder) {
 		super();
 		this.wheel = builder.wheel;
 		this.body = builder.body;
@@ -19,7 +19,7 @@ public class Car {
 	}
 	
 	
-	  public static class Builder {
+	  public static class BuilderCar implements Builder<Car>{
 		
 		private Wheel wheel;
 		
@@ -27,21 +27,22 @@ public class Car {
 		
 		private Door door;
 		
-		public Builder(Door door) {
+		public BuilderCar(Door door) {
 			this.door = door;
 		}
 		
-		public Builder wheel(Wheel wheel) {
+		public BuilderCar wheel(Wheel wheel) {
 			this.wheel = wheel;
 			return this;
 		}
 		
-		public Builder body(Body body) {
+		public BuilderCar body(Body body) {
 			this.body = body;
 			return this;
 		}
 		
-		public Car Build() {
+		@Override
+		public Car build() {
 			return new Car(this);
 		}
 		
@@ -57,15 +58,45 @@ public class Car {
 	  
 	  public static void main(String[] args) {
 		  
-		  Car car = new Car.Builder(new BMWDoor() {
+		  Car car = new Car.BuilderCar(new BMWDoor() {
 			
 			@Override
 			public void detial() {
 				System.out.println("excutor");
 			}
-		}).Build();
+		}).build();
 		  
-		car.carDetial();
+//		car.carDetial();
+		
+		System.out.println(car);
+		
+		
+		 Car car1 = new Car.BuilderCar(new BMWDoor() {
+				
+				@Override
+				public void detial() {
+					System.out.println("excutor");
+				}
+			}).build();
+		
+
+			System.out.println(car1);
+		
+		new Thread(new Runnable() {
+			
+			@Override
+			public void run() {
+				 Car car = new Car.BuilderCar(new BMWDoor() {
+						
+						@Override
+						public void detial() {
+							System.out.println("excutor");
+						}
+					}).build();
+				System.out.println(car);	  
+				
+			}
+		}).start();
 		  
 	}
 	  

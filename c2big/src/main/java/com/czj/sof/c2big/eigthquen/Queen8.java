@@ -1,6 +1,6 @@
 package com.czj.sof.c2big.eigthquen;
 
-public final class Queen8 {
+public class Queen8 {
 
 	static final int MAX_NUM = 8;
 	
@@ -10,6 +10,14 @@ public final class Queen8 {
 	
 	static final int[][] chessBoard = new int[MAX_NUM][MAX_NUM];
 	
+	
+	private static final Queen8 Q8 = new Queen8();
+	
+	protected void checkPrin() {
+		
+		System.out.println("father");
+		
+	}
 	
 	static boolean check(int x,int y) {
 		
@@ -63,9 +71,50 @@ public final class Queen8 {
 		}
 	}
 	
+	
+	
+	
+	
+	public static  Queen8 instan(Queen8 q8) {
+		
+		return q8==null?Q8:q8;
+	}
+	
+	public static  Queen8 instan() {
+		
+		return instan(null);
+	}
+	
+	
+	
+	
+	
+	
+	
 	public static void main(String[] args) {
-		Queen8.settleQueen(0);
-		Queen8.printChessBoard();
+//		Queen8.settleQueen(0);
+//		Queen8.printChessBoard();
+		
+		assert Boolean.TRUE;	
+		
+//		Queen8 instan = Queen8.instan(new Q8impl());
+//		
+//		instan.checkPrin();
+		
+//		System.out.println(instan);
+		System.out.println((1<<30) +"&&&&&&&&&"+(1>>>4));
+		
+		
+		System.out.println((2^31>>4) +"  "+(2^31>>>4));
+		
+		
+		// 00000001
+		
+		// 00001000
+		
+		
+		
+		
 		
 	}
 	
