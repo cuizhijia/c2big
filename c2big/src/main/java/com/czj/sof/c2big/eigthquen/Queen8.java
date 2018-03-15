@@ -1,5 +1,10 @@
 package com.czj.sof.c2big.eigthquen;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
 public class Queen8 {
 
 	static final int MAX_NUM = 8;
@@ -113,9 +118,32 @@ public class Queen8 {
 		// 00001000
 		
 		
+		Map<String, String> map = new HashMap<String, String>();
+		map.put("1", "hello");
+		map.forEach((K,V)->{
+			
+			
+			System.out.println(K+" "+V);
+		});	
 		
 		
 		
+		List<String> list = new ArrayList<>();
+		
+		list.forEach(item -> System.out.println(item));
+		
+		list.forEach(item -> {
+			
+			System.out.println(item);
+			
+		});
+		
+		list.stream().filter(item -> {
+			if(item.equals("")) {
+				return true;
+			}
+			return false;
+		});
 	}
 	
 	
